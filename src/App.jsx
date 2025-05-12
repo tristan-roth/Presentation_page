@@ -77,8 +77,8 @@ export default function App() {
       </main>
       <footer className="bg-gray-100 p-4 text-center flex justify-center space-x-4">
         <a href="mailto:tristan@example.com"><Mail /></a>
-        <a href="https://github.com/monprofil" target="_blank"><Github /></a>
-        <a href="https://linkedin.com/in/monprofil" target="_blank"><Linkedin /></a>
+        <a href="https://github.com/tristan-roth" target="_blank"><Github /></a>
+        <a href="https://www.linkedin.com/in/tristan-roth-3b5232270/" target="_blank"><Linkedin /></a>
       </footer>
     </div>
   );
