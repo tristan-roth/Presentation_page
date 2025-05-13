@@ -32,11 +32,15 @@ export default function App() {
         return (
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Curriculum Vitae</h2>
-            <img
-              src="/cv-preview.png"
-              alt="Aperçu du CV"
-              className="w-full max-w-xl rounded-xl shadow-md"
-            />
+            <div className="flex justify-center my-6">
+              <img
+                src="/cv-preview.png"
+                alt="Aperçu du CV"
+                className="w-full max-w-xl rounded-xl shadow-md"
+              />
+            </div>
+
+
             <p className="text-gray-700">
               Mon CV présente mes formations, mes compétences et mes expériences professionnelles. N'hésitez pas à le télécharger !
             </p>
