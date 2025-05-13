@@ -65,6 +65,51 @@ export default function App() {
             ))}
           </div>
         );
+      case "contact":
+        return (
+          <div className="space-y-6">
+            <h2 className="text-2xl font-semibold">Me contacter</h2>
+            <form
+              action="https://formspree.io/f/mgvkpakn" // remplace par ton propre lien
+              method="POST"
+              className="space-y-4"
+            >
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Nom</label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  className="mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-indigo-300"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-indigo-300"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Message</label>
+                <textarea
+                  name="message"
+                  rows="5"
+                  required
+                  className="mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-indigo-300"
+                />
+              </div>
+              <button
+                type="submit"
+                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              >
+                Envoyer
+              </button>
+            </form>
+          </div>
+        );
       default:
         return (
           <div className="space-y-6">
@@ -112,13 +157,14 @@ export default function App() {
           <button onClick={() => setSection("home")} className="text-white hover:underline">Accueil</button>
           <button onClick={() => setSection("cv")} className="text-white hover:underline">CV</button>
           <button onClick={() => setSection("projets")} className="text-white hover:underline">Projets</button>
+          <button onClick={() => setSection("contact")} className="text-white hover:underline">Contact</button>
         </div>
       </nav>
-      <main className="flex-1 p-6 max-w-4xl mx-auto w-full">
+      <main className="flex-1 p-6 pb-24 max-w-4xl mx-auto w-full">
         {renderSection()}
       </main>
-      <footer className="bg-gray-100 p-4 text-center flex justify-center space-x-4">
-        <a href="mailto:tristanroth00@gmail.com" aria-label="Email"><Mail /></a>
+      <footer className="fixed bottom-0 w-full bg-gray-100 border-t p-4 text-center flex justify-center space-x-4 z-10">
+        {/* <a href="mailto:tristanroth00@gmail.com" aria-label="Email"><Mail /></a> */}
         <a href="https://github.com/tristan-roth" target="_blank" aria-label="GitHub"><Github /></a>
         <a href="https://www.linkedin.com/in/tristan-roth-3b5232270/" target="_blank" aria-label="LinkedIn"><Linkedin /></a>
       </footer>
