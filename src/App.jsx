@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Github, Mail, Linkedin } from "lucide-react";
-
+import HyperspaceIntro from "./HyperspaceIntro";
 
 export default function App() {
   const [section, setSection] = useState("home");
@@ -152,6 +152,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
+      <HyperspaceIntro />
       <nav className="bg-gray-800 text-white p-4 flex justify-between items-center">
         <div className="text-lg font-bold">Mon Portfolio</div>
         <div className="space-x-4">
