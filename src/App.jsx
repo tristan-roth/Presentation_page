@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Github, Mail, Linkedin } from "lucide-react";
 
+
 export default function App() {
   const [section, setSection] = useState("home");
 
