@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-
-
-
-
 import { Github, Mail, Linkedin } from "lucide-react";
 
 export default function App() {
@@ -21,7 +17,7 @@ export default function App() {
     },
     {
       title: "Projet IA",
-      description: "Un projet comparant nottament plusieurs algorithmes d'IA pour la résolution de problèmes.",
+      description: "Un projet comparant notamment plusieurs algorithmes d'IA pour la résolution de problèmes.",
       link: "https://github.com/tristan-roth/ProjetIA-RAIL2-ROTH-BOURDON"
     }
   ];
@@ -39,8 +35,6 @@ export default function App() {
                 className="w-full max-w-xl rounded-xl shadow-md"
               />
             </div>
-
-
             <p className="text-gray-700">
               Mon CV présente mes formations, mes compétences et mes expériences professionnelles. N'hésitez pas à le télécharger !
             </p>
@@ -73,31 +67,60 @@ export default function App() {
         );
       default:
         return (
-          <div className="space-y-4">
-            <h1 className="text-3xl font-bold">Bienvenue !</h1>
-            <p>Je suis Tristan, développeur web passionné, spécialisé en React, PHP et PostgreSQL. Voici mon espace personnel où je partage mes projets et mon parcours.</p>
+          <div className="space-y-6">
+            <section className="bg-white p-6 rounded-xl shadow-md">
+              <h1 className="text-3xl font-bold mb-2">Bienvenue !</h1>
+              <p className="text-gray-700">
+                Je suis <strong>Tristan ROTH</strong>, étudiant en 3e année de BUT Informatique à l'IUT Nancy Charlemagne, parcours Réalisation d'Applications – Ingénierie Logicielle.
+              </p>
+              <p className="mt-2">
+                Passionné par le développement web et logiciel, je travaille actuellement sur la refonte du site <strong>Atoupro.com</strong>, et j'ai mené plusieurs projets en IA, développement d'API, et en architecture logicielle. Je suis à la recherche d'opportunités pour continuer à apprendre et contribuer à des projets innovants.
+              </p>
+            </section>
+
+            <section className="bg-white p-6 rounded-xl shadow-md">
+              <h2 className="text-2xl font-semibold mb-2">Compétences clés</h2>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 list-disc list-inside text-gray-800">
+                <li>Java, PHP, JavaScript, C++, Bash</li>
+                <li>React, Vue.js, Slim (PHP), HTML/CSS</li>
+                <li>PostgreSQL, MariaDB, MySQL, SQL/PLSQL</li>
+                <li>Docker, CI/CD, Virtualisation</li>
+                <li>Modélisation UML, architecture MVC</li>
+                <li>Flutter (développement mobile)</li>
+                <li>Gestion de projet, Gantt, Méthodologie Agile</li>
+                <li>Initiation à l’IA, optimisation, compilation</li>
+              </ul>
+            </section>
+
+            <section className="bg-white p-6 rounded-xl shadow-md">
+              <h2 className="text-2xl font-semibold mb-2">Recommandation</h2>
+              <p>
+                "Tristan s’est montré motivé, sérieux et très impliqué. Il a réalisé des tâches avec succès et efficacité. Son professionnalisme et son envie d’apprendre ont été très appréciés."
+              </p>
+              <p className="italic mt-2">– Johanne Motte, RH chez ELECTAVIA</p>
+            </section>
           </div>
         );
     }
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-50">
       <nav className="bg-gray-800 text-white p-4 flex justify-between items-center">
         <div className="text-lg font-bold">Mon Portfolio</div>
         <div className="space-x-4">
-          <button onClick={() => setSection("home")} className="text-white">Accueil</button>
-          <button onClick={() => setSection("cv")} className="text-white">CV</button>
-          <button onClick={() => setSection("projets")} className="text-white">Projets</button>
+          <button onClick={() => setSection("home")} className="text-white hover:underline">Accueil</button>
+          <button onClick={() => setSection("cv")} className="text-white hover:underline">CV</button>
+          <button onClick={() => setSection("projets")} className="text-white hover:underline">Projets</button>
         </div>
       </nav>
       <main className="flex-1 p-6 max-w-4xl mx-auto w-full">
         {renderSection()}
       </main>
       <footer className="bg-gray-100 p-4 text-center flex justify-center space-x-4">
-        <a href="mailto:tristanroth00@gmail.com"><Mail /></a>
-        <a href="https://github.com/tristan-roth" target="_blank"><Github /></a>
-        <a href="https://www.linkedin.com/in/tristan-roth-3b5232270/" target="_blank"><Linkedin /></a>
+        <a href="mailto:tristanroth00@gmail.com" aria-label="Email"><Mail /></a>
+        <a href="https://github.com/tristan-roth" target="_blank" aria-label="GitHub"><Github /></a>
+        <a href="https://www.linkedin.com/in/tristan-roth-3b5232270/" target="_blank" aria-label="LinkedIn"><Linkedin /></a>
       </footer>
     </div>
   );
