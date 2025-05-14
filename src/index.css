@@ -13,3 +13,28 @@
 body {
   font-family: 'StarJedi', sans-serif;
 }
+
+html, body, #root {
+  height: 100%;
+}
+
+.border-starwars {
+  position: relative;
+  border: 1px solid #9f754c; /* doré métallique */
+  padding: 1.5rem;
+  background-color: #111; /* fond sombre */
+
+  clip-path: polygon(
+    12px 0%, 100% 0%, 100% 12px,
+    100% calc(100% - 12px), calc(100% - 12px) 100%,
+    0% 100%, 0% calc(100% - 12px), 0% 12px
+  );
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.border-starwars:hover {
+  border-color: #ffe81f;
+  box-shadow: 0 0 8px #ffe81f;
+}
+
+

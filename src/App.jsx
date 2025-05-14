@@ -29,7 +29,7 @@ export default function App() {
       case "cv":
         return (
           <div className="space-y-4">
-            <h2 className="text-3xl font-star text-yellow-600">Curriculum Vitae</h2>
+            <h2 className="text-3xl font-star text-whithe">Curriculum Vitae</h2>
             <div className="flex justify-center my-6">
               <img
                 src="/cv-preview.png"
@@ -126,7 +126,9 @@ export default function App() {
               </p>
             </section>
 
-            <section className="bg-neutral-900 p-6 rounded-xl shadow-md">
+            <section className="bg-neutral-900 p-6 rounded-xl shadow-md border-starwars">
+            {/* <section className="border-starwars"> */}
+
               <h2 className="font-star text-yellow-600 text-2xl">Compétences clés</h2>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 list-disc list-inside">
                 <li>Java, PHP, JavaScript, C++, Bash</li>
@@ -153,10 +155,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-black text-white font-sans">
+    <div className="min-h-screen flex flex-col bg-black text-white font-sans relative">
       <HyperspaceIntro />
       <Starfield />
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col flex-1">
         <nav className="bg-neutral-900 text-white p-4 flex justify-between items-center">
           <div className="text-lg font-star">Mon Portfolio</div>
           <div className="space-x-4">
@@ -166,10 +168,10 @@ export default function App() {
             <button onClick={() => setSection("contact")} className="text-white hover:underline">Contact</button>
           </div>
         </nav>
-        <main className="flex-1 p-6 pb-24 max-w-4xl mx-auto w-full">
+        <main className="flex-1 p-6 max-w-4xl mx-auto w-full">
           {renderSection()}
         </main>
-        <footer className="fixed bottom-0 w-full bg-neutral-900 border-t p-4 text-center flex justify-center space-x-4 z-10">
+        <footer className="w-full bg-neutral-900 border-t p-2 text-center flex justify-center items-center space-x-4 mt-8">
           {/* <a href="mailto:tristanroth00@gmail.com" aria-label="Email"><Mail /></a> */}
           <a href="https://github.com/tristan-roth" target="_blank" aria-label="GitHub"><Github /></a>
           <a href="https://www.linkedin.com/in/tristan-roth-3b5232270/" target="_blank" aria-label="LinkedIn"><Linkedin /></a>

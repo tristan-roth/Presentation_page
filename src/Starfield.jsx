@@ -17,7 +17,7 @@ const Starfield = () => {
     stars.current = Array.from({ length: numStars }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      r: Math.random() * 1.5 + 0.5,
+      r: Math.random() * 0.7 + 0.3,
       dx: Math.random() * 0.2 - 0.1,
       dy: Math.random() * 0.2 - 0.1,
     }));
@@ -77,7 +77,7 @@ const Starfield = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full z-0"
+      className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none"
     ></canvas>
   );
 };
