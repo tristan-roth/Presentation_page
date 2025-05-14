@@ -34,7 +34,7 @@ export default function App() {
               <img
                 src="/cv-preview.png"
                 alt="Aperçu du CV"
-                className="w-full max-w-xl rounded-xl shadow-md"
+                className="w-full max-w-xl rounded-xl shadow-md border-starwars"
               />
             </div>
             <p>
@@ -53,7 +53,7 @@ export default function App() {
         return (
           <div className="grid gap-4 md:grid-cols-2">
             {projects.map((project, i) => (
-              <div key={i} className="bg-neutral-900 rounded-xl border p-4 shadow-md">
+              <div key={i} className="bg-neutral-900 rounded-xl border-starwars p-4 shadow-md">
                 <h3 className="text-xl font-star text-yellow-600 mb-2">{project.title}</h3>
                 <p className="mb-2">{project.description}</p>
                 <a
@@ -82,7 +82,7 @@ export default function App() {
                   type="text"
                   name="name"
                   required
-                  className="mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
+                  className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
                 />
               </div>
               <div>
@@ -91,7 +91,7 @@ export default function App() {
                   type="email"
                   name="email"
                   required
-                  className="mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
+                  className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
                 />
               </div>
               <div>
@@ -100,7 +100,7 @@ export default function App() {
                   name="message"
                   rows="5"
                   required
-                  className="mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
+                  className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
                 />
               </div>
               <button
@@ -115,7 +115,7 @@ export default function App() {
       default:
         return (
           <div className="space-y-6">
-            <section className="bg-neutral-900 p-6 rounded-xl shadow-md">
+            <section className="bg-neutral-900 p-6 rounded-xl shadow-md border-starwars">
               {/* <h1 className="text-3xl font-bold mb-2">Bienvenue !</h1> */}
               <h1 className="font-star text-yellow-600 text-4xl">Bienvenue jeune Padawan</h1>
               <p>
@@ -142,13 +142,19 @@ export default function App() {
               </ul>
             </section>
 
-            <section className="bg-neutral-900 p-6 rounded-xl shadow-md">
+            <section className="bg-neutral-900 p-6 rounded-xl shadow-md border-starwars">
               <h2 className="font-star text-yellow-600 text-2xl">Recommandation</h2>
               <p>
                 "Tristan s’est montré motivé, sérieux et très impliqué. Il a réalisé des tâches avec succès et efficacité. Son professionnalisme et son envie d’apprendre ont été très appréciés."
               </p>
               <p className="italic mt-2">– Johanne Motte, RH chez ELECTAVIA</p>
             </section>
+
+            {/* <div class="starwars-frame">
+              <h2>VOS CHOIX ONT DES CONSÉQUENCES</h2>
+              <p>Chaque décision que vous prenez peut avoir des répercussions dramatiques...</p>
+            </div> */}
+
           </div>
         );
     }
@@ -160,7 +166,7 @@ export default function App() {
       <Starfield />
       <div className="relative z-10 flex flex-col flex-1">
         <nav className="bg-neutral-900 text-white p-4 flex justify-between items-center">
-          <div className="text-lg font-star">Mon Portfolio</div>
+          <div className="text-lg font-starwars">Mon Portfolio STAR</div>
           <div className="space-x-4">
             <button onClick={() => setSection("home")} className="text-white hover:underline">Accueil</button>
             <button onClick={() => setSection("cv")} className="text-white hover:underline">CV</button>

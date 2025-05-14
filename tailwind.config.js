@@ -10,7 +10,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ['"Open Sans"', 'ui-sans-serif', 'system-ui'],
-        star: ['StarJedi', 'sans-serif'],
+        star: ['Star', 'sans-serif'],
+        starwars: ['StarJedi', 'sans-serif'],
       }
     },
   },

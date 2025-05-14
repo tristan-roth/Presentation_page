@@ -3,16 +3,24 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'StarJedi';
+    font-family: 'Star';
     src: url('/fonts/Vogue-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
-body {
-  font-family: 'StarJedi', sans-serif;
+@font-face {
+    font-family: 'StarJedi';
+    src: url('/fonts/Starjedi.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
+
+/* body {
+  font-family: 'StarJedi', sans-serif;
+} */
 
 html, body, #root {
   height: 100%;
@@ -33,7 +41,7 @@ html, body, #root {
 }
 
 .border-starwars:hover {
-  border-color: #ffe81f;
+  border-color: #ffe91fc2;
   box-shadow: 0 0 8px #ffe81f;
 }
 
