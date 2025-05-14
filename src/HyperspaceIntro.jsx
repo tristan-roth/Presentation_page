@@ -4,7 +4,7 @@ export default function HyperspaceIntro() {
   const [show, setShow] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setShow(false), 3000); // durée ≈ vidéo
+    const timeout = setTimeout(() => setShow(false), 5000); // durée ≈ vidéo
     return () => clearTimeout(timeout);
   }, []);
 
@@ -13,7 +13,7 @@ export default function HyperspaceIntro() {
   return (
     <div className="fixed inset-0 bg-black z-50">
       <video
-        src="/hyperspace.mp4"
+        src="/output.mp4"
         autoPlay
         muted
         playsInline
