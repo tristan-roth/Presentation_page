@@ -28,7 +28,7 @@ export default function App() {
       case "cv":
         return (
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold">Curriculum Vitae</h2>
+            <h2 className="text-3xl font-star text-yellow-600">Curriculum Vitae</h2>
             <div className="flex justify-center my-6">
               <img
                 src="/cv-preview.png"
@@ -36,7 +36,7 @@ export default function App() {
                 className="w-full max-w-xl rounded-xl shadow-md"
               />
             </div>
-            <p className="text-gray-700">
+            <p>
               Mon CV présente mes formations, mes compétences et mes expériences professionnelles. N'hésitez pas à le télécharger !
             </p>
             <a
@@ -44,7 +44,7 @@ export default function App() {
               download
               className="inline-block mt-2 text-blue-600 underline hover:text-blue-800"
             >
-              Télécharger le CV en PDF
+              Télécharger le CV en PDF // à encadrer en jaune
             </a>
           </div>
         );
@@ -52,8 +52,8 @@ export default function App() {
         return (
           <div className="grid gap-4 md:grid-cols-2">
             {projects.map((project, i) => (
-              <div key={i} className="bg-white rounded-xl border p-4 shadow-md">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+              <div key={i} className="bg-neutral-900 rounded-xl border p-4 shadow-md">
+                <h3 className="text-xl font-star text-yellow-600 mb-2">{project.title}</h3>
                 <p className="mb-2">{project.description}</p>
                 <a
                   href={project.link}
@@ -69,42 +69,42 @@ export default function App() {
       case "contact":
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-semibold">Me contacter</h2>
+            <h2 className="text-2xl font-star text-yellow-600">Me contacter</h2>
             <form
-              action="https://formspree.io/f/mgvkpakn" // remplace par ton propre lien
+              action="https://formspree.io/f/mgvkpakn"
               method="POST"
               className="space-y-4"
             >
               <div>
-                <label className="block text-sm font-medium text-gray-700">Nom</label>
+                <label className="block text-sm font-star">Nom //encadré en jaune le champs</label>
                 <input
                   type="text"
                   name="name"
                   required
-                  className="mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-indigo-300"
+                  className="mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">Email</label>
+                <label className="block text-sm font-star">Email</label>
                 <input
                   type="email"
                   name="email"
                   required
-                  className="mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-indigo-300"
+                  className="mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">Message</label>
+                <label className="block text-sm font-star">Message</label>
                 <textarea
                   name="message"
                   rows="5"
                   required
-                  className="mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-indigo-300"
+                  className="mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
                 />
               </div>
               <button
                 type="submit"
-                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                className="bg-yellow-700 text-white px-4 py-2 rounded hover:bg-yellow-600"
               >
                 Envoyer
               </button>
@@ -114,9 +114,10 @@ export default function App() {
       default:
         return (
           <div className="space-y-6">
-            <section className="bg-white p-6 rounded-xl shadow-md">
-              <h1 className="text-3xl font-bold mb-2">Bienvenue !</h1>
-              <p className="text-gray-700">
+            <section className="bg-neutral-900 p-6 rounded-xl shadow-md">
+              {/* <h1 className="text-3xl font-bold mb-2">Bienvenue !</h1> */}
+              <h1 className="font-star text-yellow-600 text-4xl">Bienvenue jeune Padawan</h1>
+              <p>
                 Je suis <strong>Tristan ROTH</strong>, étudiant en 3e année de BUT Informatique à l'IUT Nancy Charlemagne, parcours Réalisation d'Applications – Ingénierie Logicielle.
               </p>
               <p className="mt-2">
@@ -124,9 +125,9 @@ export default function App() {
               </p>
             </section>
 
-            <section className="bg-white p-6 rounded-xl shadow-md">
-              <h2 className="text-2xl font-semibold mb-2">Compétences clés</h2>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 list-disc list-inside text-gray-800">
+            <section className="bg-neutral-900 p-6 rounded-xl shadow-md">
+              <h2 className="font-star text-yellow-600 text-2xl">Compétences clés</h2>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 list-disc list-inside">
                 <li>Java, PHP, JavaScript, C++, Bash</li>
                 <li>React, Vue.js, Slim (PHP), HTML/CSS</li>
                 <li>PostgreSQL, MariaDB, MySQL, SQL/PLSQL</li>
@@ -138,8 +139,8 @@ export default function App() {
               </ul>
             </section>
 
-            <section className="bg-white p-6 rounded-xl shadow-md">
-              <h2 className="text-2xl font-semibold mb-2">Recommandation</h2>
+            <section className="bg-neutral-900 p-6 rounded-xl shadow-md">
+              <h2 className="font-star text-yellow-600 text-2xl">Recommandation</h2>
               <p>
                 "Tristan s’est montré motivé, sérieux et très impliqué. Il a réalisé des tâches avec succès et efficacité. Son professionnalisme et son envie d’apprendre ont été très appréciés."
               </p>
@@ -151,10 +152,10 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-black text-white font-sans">
       <HyperspaceIntro />
-      <nav className="bg-gray-800 text-white p-4 flex justify-between items-center">
-        <div className="text-lg font-bold">Mon Portfolio</div>
+      <nav className="bg-neutral-900 text-white p-4 flex justify-between items-center">
+        <div className="text-lg font-star">Mon Portfolio</div>
         <div className="space-x-4">
           <button onClick={() => setSection("home")} className="text-white hover:underline">Accueil</button>
           <button onClick={() => setSection("cv")} className="text-white hover:underline">CV</button>
@@ -165,7 +166,7 @@ export default function App() {
       <main className="flex-1 p-6 pb-24 max-w-4xl mx-auto w-full">
         {renderSection()}
       </main>
-      <footer className="fixed bottom-0 w-full bg-gray-100 border-t p-4 text-center flex justify-center space-x-4 z-10">
+      <footer className="fixed bottom-0 w-full bg-neutral-900 border-t p-4 text-center flex justify-center space-x-4 z-10">
         {/* <a href="mailto:tristanroth00@gmail.com" aria-label="Email"><Mail /></a> */}
         <a href="https://github.com/tristan-roth" target="_blank" aria-label="GitHub"><Github /></a>
         <a href="https://www.linkedin.com/in/tristan-roth-3b5232270/" target="_blank" aria-label="LinkedIn"><Linkedin /></a>

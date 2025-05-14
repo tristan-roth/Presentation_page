@@ -4,7 +4,7 @@ export default function HyperspaceIntro() {
   const [show, setShow] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setShow(false), 4000); // durée ≈ vidéo
+    const timeout = setTimeout(() => setShow(false), 3000); // durée ≈ vidéo
     return () => clearTimeout(timeout);
   }, []);
 
