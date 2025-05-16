@@ -166,7 +166,7 @@ export default function App() {
       <Starfield />
       <div className="relative z-10 flex flex-col flex-1">
         <nav className="bg-neutral-900 text-white p-4 flex justify-between items-center">
-          <div className="text-lg font-starwars">Mon Portfolio STAR</div>
+          <div className="text-lg font-starwars">Mon Portfolio</div>
           <div className="space-x-4">
             <button onClick={() => setSection("home")} className="text-white hover:underline">Accueil</button>
             <button onClick={() => setSection("cv")} className="text-white hover:underline">CV</button>
