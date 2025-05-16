@@ -115,7 +115,7 @@ export default function App() {
       default:
         return (
           <div className="space-y-6">
-            <section className="bg-neutral-900 p-6 rounded-xl shadow-md border-starwars">
+            <section className="p-6 rounded-xl shadow-md">
               {/* <h1 className="text-3xl font-bold mb-2">Bienvenue !</h1> */}
               <h1 className="font-star text-yellow-600 text-4xl">Bienvenue jeune Padawan</h1>
               <p>
@@ -126,7 +126,7 @@ export default function App() {
               </p>
             </section>
 
-            <section className="bg-neutral-900 p-6 rounded-xl shadow-md border-starwars">
+            <section className="p-6 rounded-xl shadow-md">
             {/* <section className="border-starwars"> */}
 
               <h2 className="font-star text-yellow-600 text-2xl">Compétences clés</h2>
@@ -142,7 +142,7 @@ export default function App() {
               </ul>
             </section>
 
-            <section className="bg-neutral-900 p-6 rounded-xl shadow-md border-starwars">
+            <section className="p-6 rounded-xl shadow-md">
               <h2 className="font-star text-yellow-600 text-2xl">Recommandation</h2>
               <p>
                 "Tristan s’est montré motivé, sérieux et très impliqué. Il a réalisé des tâches avec succès et efficacité. Son professionnalisme et son envie d’apprendre ont été très appréciés."
