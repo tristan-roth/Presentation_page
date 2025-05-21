@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Github, Mail, Linkedin } from "lucide-react";
 import HyperspaceIntro from "./HyperspaceIntro";
 import Starfield from "./Starfield";
+import Navbar from "./components/Navbar";
 
 export default function App() {
   const [section, setSection] = useState("home");
@@ -165,7 +166,8 @@ export default function App() {
       <HyperspaceIntro />
       <Starfield />
       <div className="relative z-10 flex flex-col flex-1">
-        <nav className="bg-neutral-900 text-white p-4 flex justify-between items-center">
+        <Navbar setSection={setSection} />
+        {/* <nav className="bg-neutral-900 text-white p-4 flex justify-between items-center">
           <div className="text-lg font-starwars">Mon Portfolio</div>
           <div className="space-x-4">
             <button onClick={() => setSection("home")} className="text-white hover:underline">Accueil</button>
@@ -173,7 +175,7 @@ export default function App() {
             <button onClick={() => setSection("projets")} className="text-white hover:underline">Projets</button>
             <button onClick={() => setSection("contact")} className="text-white hover:underline">Contact</button>
           </div>
-        </nav>
+        </nav> */}
         <main className="flex-1 p-6 max-w-4xl mx-auto w-full">
           {renderSection()}
         </main>
