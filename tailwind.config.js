@@ -1,5 +1,8 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  safelist: [
+    'border-starwars',
+  ],
   theme: {
     extend: {
       colors: {
