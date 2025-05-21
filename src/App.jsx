@@ -52,9 +52,9 @@ export default function App() {
           <a
             href="/CV-Tristan-ROTH.pdf"
             download
-            className="inline-block mt-2 text-blue-600 underline hover:text-blue-800"
+            className="inline-block mt-2 text-yellow-600 nav-hover-starwars"
           >
-            Télécharger le CV en PDF // à encadrer en jaune
+            Télécharger le CV en PDF
           </a>
       ]);
       case "projets":
@@ -67,11 +67,12 @@ export default function App() {
                   <p className="mb-2 flex-grow">{project.description}</p>
                   <a
                     href={project.link}
-                    className="text-blue-500 hover:underline mt-auto"
+                    className="text-yellow-600 inline-block"
                     target="_blank"
                   >
                     Voir le projet
                   </a>
+
                 </div>
               )),
             )}

@@ -68,5 +68,28 @@ html, body, #root {
   }
 }
 
+.nav-hover-starwars {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.nav-hover-starwars::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #f7ba48; /* starwarsGold */
+  transition: width 0.3s ease;
+}
+
+.nav-hover-starwars:hover::after {
+  width: 100%;
+}
+
+
+
 
 

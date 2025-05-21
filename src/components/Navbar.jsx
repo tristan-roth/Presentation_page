@@ -34,10 +34,10 @@ export default function Navbar({ setSection }) {
 
         {/* Menu desktop */}
         <div className="hidden md:flex space-x-4">
-          <button onClick={() => setSection("home")} className="text-white hover:underline">Accueil</button>
-          <button onClick={() => setSection("cv")} className="text-white hover:underline">CV</button>
-          <button onClick={() => setSection("projets")} className="text-white hover:underline">Projets</button>
-          <button onClick={() => setSection("contact")} className="text-white hover:underline">Contact</button>
+          <button onClick={() => setSection("home")} className="nav-hover-starwars">Accueil</button>
+          <button onClick={() => setSection("cv")} className="nav-hover-starwars">CV</button>
+          <button onClick={() => setSection("projets")} className="nav-hover-starwars">Projets</button>
+          <button onClick={() => setSection("contact")} className="nav-hover-starwars">Contact</button>
         </div>
       </div>
 
