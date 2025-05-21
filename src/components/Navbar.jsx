@@ -6,7 +6,13 @@ export default function Navbar({ setSection }) {
   return (
     <nav className="bg-neutral-900 text-white p-4 relative z-50">
       <div className="flex justify-between items-center">
-        <div className="text-lg font-starwars">Mon Portfolio</div>
+        <button
+          onClick={() => setSection("home")}
+          className="text-lg font-starwars hover:text-starwarsGold transition"
+        >
+          Mon Portfolio
+        </button>
+
 
         {/* Hamburger animé */}
         <button
@@ -35,6 +41,7 @@ export default function Navbar({ setSection }) {
         {/* Menu desktop */}
         <div className="hidden md:flex space-x-4">
           <button onClick={() => setSection("home")} className="nav-hover-starwars">Accueil</button>
+          <button onClick={() => setSection("competences")} className="nav-hover-starwars">Compétences</button>
           <button onClick={() => setSection("cv")} className="nav-hover-starwars">CV</button>
           <button onClick={() => setSection("projets")} className="nav-hover-starwars">Projets</button>
           <button onClick={() => setSection("contact")} className="nav-hover-starwars">Contact</button>

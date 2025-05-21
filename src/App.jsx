@@ -4,10 +4,15 @@ import HyperspaceIntro from "./HyperspaceIntro";
 import Starfield from "./Starfield";
 import Navbar from "./components/Navbar";
 import FadeIn from "./components/FadeIn";
+import ProjectsSection from "./ProjectsSection";
+import SkillsSection from './SkillsSection';
+import HomePage from "./HomePage";
+
 
 export default function App() {
   const [section, setSection] = useState("home");
   const [showContent, setShowContent] = useState(false);
+  
 
   // useEffect(() => {
   //   const timer = setTimeout(() => setShowContent(true), 100); // petit délai avant affichage
@@ -44,6 +49,10 @@ export default function App() {
 
   const renderSection = () => {
     switch (section) {
+      case "competences":
+        return staggeredFadeIn ([
+           <SkillsSection />
+        ]);
       case "cv":
         return staggeredFadeIn ([
           <h2 className="text-3xl font-star text-whithe">Curriculum Vitae</h2>,
@@ -67,58 +76,59 @@ export default function App() {
           </a>
       ]);
       case "projets":
-        return (
-        <div className="space-y-12">
-          {projects.map((project, i) => {
-            const isEven = i % 2 === 0;
-            return (
-              <FadeIn key={i} delay={i * 200}>
-                <div
-                  className={`flex flex-col md:flex-row ${
-                    isEven ? "" : "md:flex-row-reverse"
-                  } items-center gap-6 bg-neutral-900 rounded-xl border-starwars-nopadding`}
-                >
-                  {/* Texte à gauche ou droite */}
-                  <div className="md:w-1/2 text-white text-center md:text-left">
-                    <h3 className="text-xl font-star text-yellow-600 mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="mb-2">{project.description}</p>
-                    <a
-                      href={project.link}
-                      className="text-yellow-600 hover:text-starwarsGold hover:drop-shadow-[0_0_6px_#ffe81f] transition duration-300"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Voir le projet
-                    </a>
-                  </div>
+        return staggeredFadeIn ([
+           <ProjectsSection />
+        ]);
+        // return (
+        // <div className="space-y-12">
+        //   {projects.map((project, i) => {
+        //     const isEven = i % 2 === 0;
+        //     return (
+        //       <FadeIn key={i} delay={i * 200}>
+        //         <div
+        //           className={`flex flex-col md:flex-row ${
+        //             isEven ? "" : "md:flex-row-reverse"
+        //           } items-center gap-6 bg-neutral-900 rounded-xl border-starwars-nopadding`}
+        //         >
+        //           {/* Texte à gauche ou droite */}
+        //           <div className="md:w-1/2 text-white text-center md:text-left">
+        //             <h3 className="text-xl font-star text-yellow-600 mb-2">
+        //               {project.title}
+        //             </h3>
+        //             <p className="mb-2">{project.description}</p>
+        //             <a
+        //               href={project.link}
+        //               className="text-yellow-600 hover:text-starwarsGold hover:drop-shadow-[0_0_6px_#ffe81f] transition duration-300"
+        //               target="_blank"
+        //               rel="noopener noreferrer"
+        //             >
+        //               Voir le projet
+        //             </a>
+        //           </div>
 
-                  {/* GIF ou vidéo plein cadre */}
-                  <div className="md:w-1/2 h-full">
-                    {project.media.endsWith(".mp4") ? (
-                      <video
-                        src={project.media}
-                        controls
-                        className="w-full h-full object-cover rounded-xl"
-                      />
-                    ) : (
-                      <img
-                        src={project.media}
-                        alt={`Présentation de ${project.title}`}
-                        className="w-full h-full object-cover rounded-xl"
-                      />
-                    )}
-                  </div>
-                </div>
-              </FadeIn>
-            );
-          })}
-        </div>
+        //           {/* GIF ou vidéo plein cadre */}
+        //           <div className="md:w-1/2 h-full">
+        //             {project.media.endsWith(".mp4") ? (
+        //               <video
+        //                 src={project.media}
+        //                 controls
+        //                 className="w-full h-full object-cover rounded-xl"
+        //               />
+        //             ) : (
+        //               <img
+        //                 src={project.media}
+        //                 alt={`Présentation de ${project.title}`}
+        //                 className="w-full h-full object-cover rounded-xl"
+        //               />
+        //             )}
+        //           </div>
+        //         </div>
+        //       </FadeIn>
+        //     );
+        //   })}
+        // </div>
 
-      );
-
-
+      // );
       case "contact":
         return (
           <div className="space-y-6">
@@ -172,43 +182,9 @@ export default function App() {
         );
 
       default:
-        return (
-          <div className="space-y-6">
-            {staggeredFadeIn([
-              <section key="intro" className="p-6 rounded-xl shadow-md border-starwars-md">
-                <h1 className="font-star text-yellow-600 text-4xl">Bienvenue jeune Padawan</h1>
-                <p>
-                  Je suis <strong>Tristan ROTH</strong>, étudiant en 3e année de BUT Informatique à l'IUT Nancy Charlemagne, parcours Réalisation d'Applications – Ingénierie Logicielle.
-                </p>
-                <p className="mt-2">
-                  Passionné par le développement web et logiciel, je travaille actuellement sur la refonte du site <strong>Atoupro.com</strong>, et j'ai mené plusieurs projets en IA, développement d'API, et en architecture logicielle. Je suis à la recherche d'opportunités pour continuer à apprendre et contribuer à des projets innovants.
-                </p>
-              </section>,
-
-              <section key="skills" className="p-6 rounded-xl shadow-md border-starwars-md">
-                <h2 className="font-star text-yellow-600 text-2xl">Compétences clés</h2>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 list-disc list-inside">
-                  <li>Java, PHP, JavaScript, C++, Bash</li>
-                  <li>React, Vue.js, Slim (PHP), HTML/CSS</li>
-                  <li>PostgreSQL, MariaDB, MySQL, SQL/PLSQL</li>
-                  <li>Docker, CI/CD, Virtualisation</li>
-                  <li>Modélisation UML, architecture MVC</li>
-                  <li>Flutter (développement mobile)</li>
-                  <li>Gestion de projet, Gantt, Méthodologie Agile</li>
-                  <li>Initiation à l’IA, optimisation, compilation</li>
-                </ul>
-              </section>,
-
-              <section key="recos" className="p-6 rounded-xl shadow-md border-starwars-md">
-                <h2 className="font-star text-yellow-600 text-2xl">Recommandation</h2>
-                <p>
-                  "Tristan s’est montré motivé, sérieux et très impliqué. Il a réalisé des tâches avec succès et efficacité. Son professionnalisme et son envie d’apprendre ont été très appréciés."
-                </p>
-                <p className="italic mt-2">– Johanne Motte, RH chez ELECTAVIA</p>
-              </section>
-            ], 20, 100)}
-          </div>
-        );
+        return staggeredFadeIn ([
+           <HomePage />
+        ]);
     }
   };
 
@@ -218,7 +194,7 @@ export default function App() {
       <Starfield />
       <div className="relative z-10 flex flex-col flex-1">
         <Navbar setSection={setSection} />
-        <main className={`flex-1 p-6 max-w-4xl mx-auto w-full transform transition-all duration-700 ease-out ${
+        <main className={`flex-1 p-6 max-w-6xl mx-auto w-full transform transition-all duration-700 ease-out ${
           showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
         }`}>
           <FadeIn key={section} delay={150}>
