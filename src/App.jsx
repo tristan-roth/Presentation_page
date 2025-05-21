@@ -24,7 +24,7 @@ export default function App() {
     {
       title: "Atoupro.com V3",
       description: "Une refonte complète du site Atoupro.com, avec une nouvelle interface et de nouvelles fonctionnalités.",
-      link: "https://github.com/tristan-roth/atoupro.com-V3"
+      link: "https://www.atoupro.com/"
     },
     {
       title: "Projet IA",
@@ -67,11 +67,12 @@ export default function App() {
                   <p className="mb-2 flex-grow">{project.description}</p>
                   <a
                     href={project.link}
-                    className="text-yellow-600 inline-block"
+                    className="text-yellow-600 hover:text-starwarsGold hover:drop-shadow-[0_0_6px_#ffe81f] transition duration-300"
                     target="_blank"
                   >
                     Voir le projet
                   </a>
+
 
                 </div>
               )),
