@@ -6,7 +6,7 @@ export default function Navbar({ setSection }) {
   return (
     <nav className="bg-neutral-900 text-white p-4 relative z-50">
       <div className="flex justify-between items-center">
-        <div className="text-lg font-starwars text-starwarsGold">Mon Portfolio</div>
+        <div className="text-lg font-starwars">Mon Portfolio</div>
 
         {/* Hamburger animé */}
         <button
@@ -34,10 +34,10 @@ export default function Navbar({ setSection }) {
 
         {/* Menu desktop */}
         <div className="hidden md:flex space-x-4">
-          <button onClick={() => setSection("home")} className="hover:underline">Accueil</button>
-          <button onClick={() => setSection("cv")} className="hover:underline">CV</button>
-          <button onClick={() => setSection("projets")} className="hover:underline">Projets</button>
-          <button onClick={() => setSection("contact")} className="hover:underline">Contact</button>
+          <button onClick={() => setSection("home")} className="text-white hover:underline">Accueil</button>
+          <button onClick={() => setSection("cv")} className="text-white hover:underline">CV</button>
+          <button onClick={() => setSection("projets")} className="text-white hover:underline">Projets</button>
+          <button onClick={() => setSection("contact")} className="text-white hover:underline">Contact</button>
         </div>
       </div>
 

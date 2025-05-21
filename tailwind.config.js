@@ -8,7 +8,7 @@ module.exports = {
       colors: {
         jedi: '#2e9fff',
         sith: '#ff2e2e',
-        starwarsGold: '#ffe81f',
+        starwarsGold: '#f7ba48',
         darkspace: '#0a0a0a',
       },
       fontFamily: {
