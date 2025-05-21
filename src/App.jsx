@@ -19,17 +19,26 @@ export default function App() {
     {
       title: "Projet Portfolio",
       description: "Un site personnel pour présenter mon profil et mes projets.",
-      link: "https://github.com/tristan-roth/Presentation_page"
+      link: "https://github.com/tristan-roth/Presentation_page",
+      media: "/portfolio.png"
+    },
+    {
+      title: "Tower Defense & Machine Learning",
+      description: "Un projet de jeu Tower Defense en Java, avec une IA pour le joueur. Le projet a été réalisé dans le cadre du projet tutoré de ma troisième année de BUT Informatique.",
+      link: "",
+      media: "/tower-defense.gif"
     },
     {
       title: "Atoupro.com V3",
-      description: "Une refonte complète du site Atoupro.com, avec une nouvelle interface et de nouvelles fonctionnalités.",
-      link: "https://www.atoupro.com/"
+      description: "Une refonte complète du site Atoupro.com, avec une nouvelle interface et de nouvelles fonctionnalités. Le projet était en PHP 7.0 Smarty 2.6 et PostgreSQL 9.5. Une de mes première mission était de le mettre à jour en PHP 8.3 Smarty 5 et PostgreSQL 15.",
+      link: "https://www.atoupro.com/",
+      media: "/atoupro-demo.gif"
     },
     {
       title: "Projet IA",
       description: "Un projet comparant notamment plusieurs algorithmes d'IA pour la résolution de problèmes.",
-      link: "https://github.com/tristan-roth/ProjetIA-RAIL2-ROTH-BOURDON"
+      link: "https://github.com/tristan-roth/ProjetIA-RAIL2-ROTH-BOURDON",
+      media: "/projetIA.gif"
     }
   ];
 
@@ -59,26 +68,57 @@ export default function App() {
       ]);
       case "projets":
         return (
-          <div className="grid gap-4 md:grid-cols-2">
-            {staggeredFadeIn(
-              projects.map((project, i) => (
-                <div key={i} className="h-full flex flex-col bg-neutral-900 rounded-xl border-starwars p-4 shadow-md">
-                  <h3 className="text-xl font-star text-yellow-600 mb-2">{project.title}</h3>
-                  <p className="mb-2 flex-grow">{project.description}</p>
-                  <a
-                    href={project.link}
-                    className="text-yellow-600 hover:text-starwarsGold hover:drop-shadow-[0_0_6px_#ffe81f] transition duration-300"
-                    target="_blank"
-                  >
-                    Voir le projet
-                  </a>
+        <div className="space-y-12">
+          {projects.map((project, i) => {
+            const isEven = i % 2 === 0;
+            return (
+              <FadeIn key={i} delay={i * 200}>
+                <div
+                  className={`flex flex-col md:flex-row ${
+                    isEven ? "" : "md:flex-row-reverse"
+                  } items-center gap-6 bg-neutral-900 rounded-xl border-starwars-nopadding`}
+                >
+                  {/* Texte à gauche ou droite */}
+                  <div className="md:w-1/2 text-white text-center md:text-left">
+                    <h3 className="text-xl font-star text-yellow-600 mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="mb-2">{project.description}</p>
+                    <a
+                      href={project.link}
+                      className="text-yellow-600 hover:text-starwarsGold hover:drop-shadow-[0_0_6px_#ffe81f] transition duration-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Voir le projet
+                    </a>
+                  </div>
 
-
+                  {/* GIF ou vidéo plein cadre */}
+                  <div className="md:w-1/2 h-full">
+                    {project.media.endsWith(".mp4") ? (
+                      <video
+                        src={project.media}
+                        controls
+                        className="w-full h-full object-cover rounded-xl"
+                      />
+                    ) : (
+                      <img
+                        src={project.media}
+                        alt={`Présentation de ${project.title}`}
+                        className="w-full h-full object-cover rounded-xl"
+                      />
+                    )}
+                  </div>
                 </div>
-              )),
-            )}
-          </div>
-        );
+              </FadeIn>
+            );
+          })}
+        </div>
+
+      );
+
+
       case "contact":
         return (
           <div className="space-y-6">
