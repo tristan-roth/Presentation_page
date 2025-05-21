@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Github, Mail, Linkedin } from "lucide-react";
 import HyperspaceIntro from "./HyperspaceIntro";
 import Starfield from "./Starfield";
 import Navbar from "./components/Navbar";
+import FadeIn from "./components/FadeIn";
 
 export default function App() {
   const [section, setSection] = useState("home");
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowContent(true), 100); // petit délai avant affichage
+    return () => clearTimeout(timer);
+  }, []);
+
 
   const projects = [
     {
@@ -31,13 +39,15 @@ export default function App() {
         return (
           <div className="space-y-4">
             <h2 className="text-3xl font-star text-whithe">Curriculum Vitae</h2>
-            <div className="flex justify-center my-6">
-              <img
-                src="/cv-preview.png"
-                alt="Aperçu du CV"
-                className="w-full max-w-xl rounded-xl shadow-md border-starwars"
-              />
-            </div>
+            <FadeIn delay={100}>
+              <div className="flex justify-center my-6">
+                <img
+                  src="/cv-preview.png"
+                  alt="Aperçu du CV"
+                  className="w-full max-w-xl rounded-xl shadow-md border-starwars"
+                />
+              </div>
+            </FadeIn>
             <p>
               Mon CV présente mes formations, mes compétences et mes expériences professionnelles. N'hésitez pas à le télécharger !
             </p>
@@ -116,40 +126,46 @@ export default function App() {
       default:
         return (
           <div className="space-y-6">
-            <section className="p-6 rounded-xl shadow-md border-starwars-md">
-              {/* <h1 className="text-3xl font-bold mb-2">Bienvenue !</h1> */}
-              <h1 className="font-star text-yellow-600 text-4xl">Bienvenue jeune Padawan</h1>
-              <p>
-                Je suis <strong>Tristan ROTH</strong>, étudiant en 3e année de BUT Informatique à l'IUT Nancy Charlemagne, parcours Réalisation d'Applications – Ingénierie Logicielle.
-              </p>
-              <p className="mt-2">
-                Passionné par le développement web et logiciel, je travaille actuellement sur la refonte du site <strong>Atoupro.com</strong>, et j'ai mené plusieurs projets en IA, développement d'API, et en architecture logicielle. Je suis à la recherche d'opportunités pour continuer à apprendre et contribuer à des projets innovants.
-              </p>
-            </section>
+            <FadeIn delay={20}>
+              <section className="p-6 rounded-xl shadow-md border-starwars-md">
+                {/* <h1 className="text-3xl font-bold mb-2">Bienvenue !</h1> */}
+                <h1 className="font-star text-yellow-600 text-4xl">Bienvenue jeune Padawan</h1>
+                <p>
+                  Je suis <strong>Tristan ROTH</strong>, étudiant en 3e année de BUT Informatique à l'IUT Nancy Charlemagne, parcours Réalisation d'Applications – Ingénierie Logicielle.
+                </p>
+                <p className="mt-2">
+                  Passionné par le développement web et logiciel, je travaille actuellement sur la refonte du site <strong>Atoupro.com</strong>, et j'ai mené plusieurs projets en IA, développement d'API, et en architecture logicielle. Je suis à la recherche d'opportunités pour continuer à apprendre et contribuer à des projets innovants.
+                </p>
+              </section>
+            </FadeIn>
 
-            <section className="p-6 rounded-xl shadow-md border-starwars-md">
-            {/* <section className="border-starwars"> */}
+            <FadeIn delay={120}>
+              <section className="p-6 rounded-xl shadow-md border-starwars-md">
+              {/* <section className="border-starwars"> */}
 
-              <h2 className="font-star text-yellow-600 text-2xl">Compétences clés</h2>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 list-disc list-inside">
-                <li>Java, PHP, JavaScript, C++, Bash</li>
-                <li>React, Vue.js, Slim (PHP), HTML/CSS</li>
-                <li>PostgreSQL, MariaDB, MySQL, SQL/PLSQL</li>
-                <li>Docker, CI/CD, Virtualisation</li>
-                <li>Modélisation UML, architecture MVC</li>
-                <li>Flutter (développement mobile)</li>
-                <li>Gestion de projet, Gantt, Méthodologie Agile</li>
-                <li>Initiation à l’IA, optimisation, compilation</li>
-              </ul>
-            </section>
+                <h2 className="font-star text-yellow-600 text-2xl">Compétences clés</h2>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 list-disc list-inside">
+                  <li>Java, PHP, JavaScript, C++, Bash</li>
+                  <li>React, Vue.js, Slim (PHP), HTML/CSS</li>
+                  <li>PostgreSQL, MariaDB, MySQL, SQL/PLSQL</li>
+                  <li>Docker, CI/CD, Virtualisation</li>
+                  <li>Modélisation UML, architecture MVC</li>
+                  <li>Flutter (développement mobile)</li>
+                  <li>Gestion de projet, Gantt, Méthodologie Agile</li>
+                  <li>Initiation à l’IA, optimisation, compilation</li>
+                </ul>
+              </section>
+            </FadeIn>
 
-            <section className="p-6 rounded-xl shadow-md border-starwars-md">
-              <h2 className="font-star text-yellow-600 text-2xl">Recommandation</h2>
-              <p>
-                "Tristan s’est montré motivé, sérieux et très impliqué. Il a réalisé des tâches avec succès et efficacité. Son professionnalisme et son envie d’apprendre ont été très appréciés."
-              </p>
-              <p className="italic mt-2">– Johanne Motte, RH chez ELECTAVIA</p>
-            </section>
+            <FadeIn delay={220}>
+              <section className="p-6 rounded-xl shadow-md border-starwars-md">
+                <h2 className="font-star text-yellow-600 text-2xl">Recommandation</h2>
+                <p>
+                  "Tristan s’est montré motivé, sérieux et très impliqué. Il a réalisé des tâches avec succès et efficacité. Son professionnalisme et son envie d’apprendre ont été très appréciés."
+                </p>
+                <p className="italic mt-2">– Johanne Motte, RH chez ELECTAVIA</p>
+              </section>
+            </FadeIn>
 
             {/* <div class="starwars-frame">
               <h2>VOS CHOIX ONT DES CONSÉQUENCES</h2>
@@ -167,18 +183,12 @@ export default function App() {
       <Starfield />
       <div className="relative z-10 flex flex-col flex-1">
         <Navbar setSection={setSection} />
-        {/* <nav className="bg-neutral-900 text-white p-4 flex justify-between items-center">
-          <div className="text-lg font-starwars">Mon Portfolio</div>
-          <div className="space-x-4">
-            <button onClick={() => setSection("home")} className="text-white hover:underline">Accueil</button>
-            <button onClick={() => setSection("cv")} className="text-white hover:underline">CV</button>
-            <button onClick={() => setSection("projets")} className="text-white hover:underline">Projets</button>
-            <button onClick={() => setSection("contact")} className="text-white hover:underline">Contact</button>
-          </div>
-        </nav> */}
-        <main className="flex-1 p-6 max-w-4xl mx-auto w-full">
+        <main className={`flex-1 p-6 max-w-4xl mx-auto w-full transform transition-all duration-700 ease-out ${
+          showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+        }`}>
           {renderSection()}
         </main>
+
         <footer className="w-full bg-neutral-900 border-t p-2 text-center flex justify-center items-center space-x-4 mt-8">
           {/* <a href="mailto:tristanroth00@gmail.com" aria-label="Email"><Mail /></a> */}
           <a href="https://github.com/tristan-roth" target="_blank" aria-label="GitHub"><Github /></a>
