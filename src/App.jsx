@@ -9,10 +9,10 @@ export default function App() {
   const [section, setSection] = useState("home");
   const [showContent, setShowContent] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setShowContent(true), 100); // petit délai avant affichage
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => setShowContent(true), 100); // petit délai avant affichage
+  //   return () => clearTimeout(timer);
+  // }, []);
 
 
   const projects = [
@@ -36,99 +36,104 @@ export default function App() {
   const renderSection = () => {
     switch (section) {
       case "cv":
-        return (
-          <div className="space-y-4">
-            <h2 className="text-3xl font-star text-whithe">Curriculum Vitae</h2>
-            <FadeIn delay={100}>
-              <div className="flex justify-center my-6">
-                <img
-                  src="/cv-preview.png"
-                  alt="Aperçu du CV"
-                  className="w-full max-w-xl rounded-xl shadow-md border-starwars"
-                />
-              </div>
-            </FadeIn>
-            <p>
-              Mon CV présente mes formations, mes compétences et mes expériences professionnelles. N'hésitez pas à le télécharger !
-            </p>
-            <a
-              href="/CV-Tristan-ROTH.pdf"
-              download
-              className="inline-block mt-2 text-blue-600 underline hover:text-blue-800"
-            >
-              Télécharger le CV en PDF // à encadrer en jaune
-            </a>
-          </div>
-        );
+        return staggeredFadeIn ([
+          <h2 className="text-3xl font-star text-whithe">Curriculum Vitae</h2>,
+
+            <div className="flex justify-center my-6">
+              <img
+                src="/cv-preview.png"
+                alt="Aperçu du CV"
+                className="w-full max-w-xl rounded-xl shadow-md border-starwars"
+              />
+            </div>,
+          <p>
+            Mon CV présente mes formations, mes compétences et mes expériences professionnelles. N'hésitez pas à le télécharger !
+          </p>,
+          <a
+            href="/CV-Tristan-ROTH.pdf"
+            download
+            className="inline-block mt-2 text-blue-600 underline hover:text-blue-800"
+          >
+            Télécharger le CV en PDF // à encadrer en jaune
+          </a>
+      ]);
       case "projets":
         return (
           <div className="grid gap-4 md:grid-cols-2">
-            {projects.map((project, i) => (
-              <div key={i} className="bg-neutral-900 rounded-xl border-starwars p-4 shadow-md">
-                <h3 className="text-xl font-star text-yellow-600 mb-2">{project.title}</h3>
-                <p className="mb-2">{project.description}</p>
-                <a
-                  href={project.link}
-                  className="text-blue-500 hover:underline"
-                  target="_blank"
-                >
-                  Voir le projet
-                </a>
-              </div>
-            ))}
+            {staggeredFadeIn(
+              projects.map((project, i) => (
+                <div key={i} className="h-full flex flex-col bg-neutral-900 rounded-xl border-starwars p-4 shadow-md">
+                  <h3 className="text-xl font-star text-yellow-600 mb-2">{project.title}</h3>
+                  <p className="mb-2 flex-grow">{project.description}</p>
+                  <a
+                    href={project.link}
+                    className="text-blue-500 hover:underline mt-auto"
+                    target="_blank"
+                  >
+                    Voir le projet
+                  </a>
+                </div>
+              )),
+            )}
           </div>
         );
       case "contact":
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-star text-yellow-600">Me contacter</h2>
-            <form
-              action="https://formspree.io/f/mgvkpakn"
-              method="POST"
-              className="space-y-4"
-            >
-              <div>
-                <label className="block text-sm font-star">Nom //encadré en jaune le champs</label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-star">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-star">Message</label>
-                <textarea
-                  name="message"
-                  rows="5"
-                  required
-                  className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
-                />
-              </div>
-              <button
-                type="submit"
-                className="bg-yellow-700 text-white px-4 py-2 rounded hover:bg-yellow-600"
+            {staggeredFadeIn([
+              <h2 key="contact-title" className="text-2xl font-star text-yellow-600">
+                Me contacter
+              </h2>,
+
+              <form
+                key="contact-form"
+                action="https://formspree.io/f/mgvkpakn"
+                method="POST"
+                className="space-y-4"
               >
-                Envoyer
-              </button>
-            </form>
+                <div>
+                  <label className="block text-sm font-star">Nom //encadré en jaune le champs</label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-star">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-star">Message</label>
+                  <textarea
+                    name="message"
+                    rows="5"
+                    required
+                    className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="bg-yellow-700 text-white px-4 py-2 rounded hover:bg-yellow-600"
+                >
+                  Envoyer
+                </button>
+              </form>
+            ], 50, 150)}
           </div>
         );
+
       default:
         return (
           <div className="space-y-6">
-            <FadeIn delay={20}>
-              <section className="p-6 rounded-xl shadow-md border-starwars-md">
-                {/* <h1 className="text-3xl font-bold mb-2">Bienvenue !</h1> */}
+            {staggeredFadeIn([
+              <section key="intro" className="p-6 rounded-xl shadow-md border-starwars-md">
                 <h1 className="font-star text-yellow-600 text-4xl">Bienvenue jeune Padawan</h1>
                 <p>
                   Je suis <strong>Tristan ROTH</strong>, étudiant en 3e année de BUT Informatique à l'IUT Nancy Charlemagne, parcours Réalisation d'Applications – Ingénierie Logicielle.
@@ -136,13 +141,9 @@ export default function App() {
                 <p className="mt-2">
                   Passionné par le développement web et logiciel, je travaille actuellement sur la refonte du site <strong>Atoupro.com</strong>, et j'ai mené plusieurs projets en IA, développement d'API, et en architecture logicielle. Je suis à la recherche d'opportunités pour continuer à apprendre et contribuer à des projets innovants.
                 </p>
-              </section>
-            </FadeIn>
+              </section>,
 
-            <FadeIn delay={120}>
-              <section className="p-6 rounded-xl shadow-md border-starwars-md">
-              {/* <section className="border-starwars"> */}
-
+              <section key="skills" className="p-6 rounded-xl shadow-md border-starwars-md">
                 <h2 className="font-star text-yellow-600 text-2xl">Compétences clés</h2>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 list-disc list-inside">
                   <li>Java, PHP, JavaScript, C++, Bash</li>
@@ -154,24 +155,16 @@ export default function App() {
                   <li>Gestion de projet, Gantt, Méthodologie Agile</li>
                   <li>Initiation à l’IA, optimisation, compilation</li>
                 </ul>
-              </section>
-            </FadeIn>
+              </section>,
 
-            <FadeIn delay={220}>
-              <section className="p-6 rounded-xl shadow-md border-starwars-md">
+              <section key="recos" className="p-6 rounded-xl shadow-md border-starwars-md">
                 <h2 className="font-star text-yellow-600 text-2xl">Recommandation</h2>
                 <p>
                   "Tristan s’est montré motivé, sérieux et très impliqué. Il a réalisé des tâches avec succès et efficacité. Son professionnalisme et son envie d’apprendre ont été très appréciés."
                 </p>
                 <p className="italic mt-2">– Johanne Motte, RH chez ELECTAVIA</p>
               </section>
-            </FadeIn>
-
-            {/* <div class="starwars-frame">
-              <h2>VOS CHOIX ONT DES CONSÉQUENCES</h2>
-              <p>Chaque décision que vous prenez peut avoir des répercussions dramatiques...</p>
-            </div> */}
-
+            ], 20, 100)}
           </div>
         );
     }
@@ -179,22 +172,33 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-black text-white font-sans relative">
-      <HyperspaceIntro />
+      <HyperspaceIntro onFinish={() => setShowContent(true)} />
       <Starfield />
       <div className="relative z-10 flex flex-col flex-1">
         <Navbar setSection={setSection} />
         <main className={`flex-1 p-6 max-w-4xl mx-auto w-full transform transition-all duration-700 ease-out ${
           showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
         }`}>
-          {renderSection()}
+          <FadeIn key={section} delay={150}>
+            {renderSection()}
+          </FadeIn>
         </main>
-
+        <FadeIn key={`footer-${section}`} delay={600}>
         <footer className="w-full bg-neutral-900 border-t p-2 text-center flex justify-center items-center space-x-4 mt-8">
           {/* <a href="mailto:tristanroth00@gmail.com" aria-label="Email"><Mail /></a> */}
           <a href="https://github.com/tristan-roth" target="_blank" aria-label="GitHub"><Github /></a>
           <a href="https://www.linkedin.com/in/tristan-roth-3b5232270/" target="_blank" aria-label="LinkedIn"><Linkedin /></a>
         </footer>
+        </FadeIn>
       </div>
     </div>
   );
+}
+
+function staggeredFadeIn(elements, baseDelay = 70, step = 200) {
+  return elements.map((el, i) => (
+    <FadeIn key={i} delay={baseDelay + i * step}>
+      {el}
+    </FadeIn>
+  ));
 }

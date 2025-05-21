@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 
-export default function HyperspaceIntro() {
+export default function HyperspaceIntro({ onFinish }) {
   const [show, setShow] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => setShow(false), 5000); // durée ≈ vidéo
+    const timeout = setTimeout(() => {
+      setShow(false);
+      onFinish();
+    }, 5000);
+
     return () => clearTimeout(timeout);
-  }, []);
+  }, [onFinish]);
 
   if (!show) return null;
 
