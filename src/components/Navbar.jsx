@@ -10,26 +10,27 @@ export default function Navbar({ setSection }) {
 
         {/* Hamburger animé */}
         <button
-          className="md:hidden flex flex-col justify-between items-center w-6 h-6 gap-1"
+          className="md:hidden w-6 h-6 relative"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Ouvrir le menu"
         >
           <span
-            className={`block w-6 h-0.5 bg-white rounded transform transition duration-300 ease-in-out ${
-              isOpen ? "rotate-45 translate-y-[6px]" : ""
+            className={`absolute top-1/2 left-0 w-full h-0.5 bg-white rounded transform transition duration-300 ease-in-out ${
+              isOpen ? "rotate-45" : "-translate-y-2"
             }`}
           />
           <span
-            className={`block w-6 h-0.5 bg-white rounded transition-opacity duration-300 ease-in-out ${
+            className={`absolute top-1/2 left-0 w-full h-0.5 bg-white rounded transition-opacity duration-300 ease-in-out ${
               isOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block w-6 h-0.5 bg-white rounded transform transition duration-300 ease-in-out ${
-              isOpen ? "-rotate-45 -translate-y-[6px]" : ""
+            className={`absolute top-1/2 left-0 w-full h-0.5 bg-white rounded transform transition duration-300 ease-in-out ${
+              isOpen ? "-rotate-45" : "translate-y-2"
             }`}
           />
         </button>
+
 
         {/* Menu desktop */}
         <div className="hidden md:flex space-x-4">
