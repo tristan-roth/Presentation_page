@@ -7,6 +7,8 @@ import FadeIn from "./components/FadeIn";
 import ProjectsSection from "./ProjectsSection";
 import SkillsSection from './SkillsSection';
 import HomePage from "./HomePage";
+import CVsection from "./CVsection";
+import ContactSection from "./ContactSection.jsx";
 
 
 export default function App() {
@@ -55,131 +57,66 @@ export default function App() {
         ]);
       case "cv":
         return staggeredFadeIn ([
-          <h2 className="text-3xl font-star text-whithe">Curriculum Vitae</h2>,
-
-            <div className="flex justify-center my-6">
-              <img
-                src="/cv-preview.png"
-                alt="Aperçu du CV"
-                className="w-full max-w-xl rounded-xl shadow-md border-starwars"
-              />
-            </div>,
-          <p>
-            Mon CV présente mes formations, mes compétences et mes expériences professionnelles. N'hésitez pas à le télécharger !
-          </p>,
-          <a
-            href="/CV-Tristan-ROTH.pdf"
-            download
-            className="inline-block mt-2 text-yellow-600 nav-hover-starwars"
-          >
-            Télécharger le CV en PDF
-          </a>
-      ]);
+          <CVsection />
+        ]);
       case "projets":
         return staggeredFadeIn ([
            <ProjectsSection />
         ]);
-        // return (
-        // <div className="space-y-12">
-        //   {projects.map((project, i) => {
-        //     const isEven = i % 2 === 0;
-        //     return (
-        //       <FadeIn key={i} delay={i * 200}>
-        //         <div
-        //           className={`flex flex-col md:flex-row ${
-        //             isEven ? "" : "md:flex-row-reverse"
-        //           } items-center gap-6 bg-neutral-900 rounded-xl border-starwars-nopadding`}
-        //         >
-        //           {/* Texte à gauche ou droite */}
-        //           <div className="md:w-1/2 text-white text-center md:text-left">
-        //             <h3 className="text-xl font-star text-yellow-600 mb-2">
-        //               {project.title}
-        //             </h3>
-        //             <p className="mb-2">{project.description}</p>
-        //             <a
-        //               href={project.link}
-        //               className="text-yellow-600 hover:text-starwarsGold hover:drop-shadow-[0_0_6px_#ffe81f] transition duration-300"
-        //               target="_blank"
-        //               rel="noopener noreferrer"
-        //             >
-        //               Voir le projet
-        //             </a>
-        //           </div>
-
-        //           {/* GIF ou vidéo plein cadre */}
-        //           <div className="md:w-1/2 h-full">
-        //             {project.media.endsWith(".mp4") ? (
-        //               <video
-        //                 src={project.media}
-        //                 controls
-        //                 className="w-full h-full object-cover rounded-xl"
-        //               />
-        //             ) : (
-        //               <img
-        //                 src={project.media}
-        //                 alt={`Présentation de ${project.title}`}
-        //                 className="w-full h-full object-cover rounded-xl"
-        //               />
-        //             )}
-        //           </div>
-        //         </div>
-        //       </FadeIn>
-        //     );
-        //   })}
-        // </div>
-
-      // );
       case "contact":
-        return (
-          <div className="space-y-6">
-            {staggeredFadeIn([
-              <h2 key="contact-title" className="text-2xl font-star text-yellow-600">
-                Me contacter
-              </h2>,
+        return staggeredFadeIn ([
+          <ContactSection />
+        ]);
+        // return (
+        //   <div className="space-y-6">
+        //     {staggeredFadeIn([
+        //       <h2 key="contact-title" className="text-2xl font-star text-yellow-600">
+        //         Me contacter
+        //       </h2>,
 
-              <form
-                key="contact-form"
-                action="https://formspree.io/f/mgvkpakn"
-                method="POST"
-                className="space-y-4"
-              >
-                <div>
-                  <label className="block text-sm font-star">Nom //encadré en jaune le champs</label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-star">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-star">Message</label>
-                  <textarea
-                    name="message"
-                    rows="5"
-                    required
-                    className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="bg-yellow-700 text-white px-4 py-2 rounded hover:bg-yellow-600"
-                >
-                  Envoyer
-                </button>
-              </form>
-            ], 50, 150)}
-          </div>
-        );
+        //       <form
+        //         key="contact-form"
+        //         action="https://formspree.io/f/mgvkpakn"
+        //         method="POST"
+        //         className="space-y-4"
+        //       >
+        //         <div>
+        //           <label className="block text-sm font-star">Nom //encadré en jaune le champs</label>
+        //           <input
+        //             type="text"
+        //             name="name"
+        //             required
+        //             className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
+        //           />
+        //         </div>
+        //         <div>
+        //           <label className="block text-sm font-star">Email</label>
+        //           <input
+        //             type="email"
+        //             name="email"
+        //             required
+        //             className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
+        //           />
+        //         </div>
+        //         <div>
+        //           <label className="block text-sm font-star">Message</label>
+        //           <textarea
+        //             name="message"
+        //             rows="5"
+        //             required
+        //             className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
+        //           />
+        //         </div>
+        //         <button
+        //           type="submit"
+        //           className="bg-yellow-700 text-white px-4 py-2 rounded hover:bg-yellow-600"
+        //         >
+        //           Envoyer
+        //         </button>
+        //       </form>
+        //     ], 50, 150)}
+        //   </div>
+        // );
 
       default:
         return staggeredFadeIn ([

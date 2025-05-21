@@ -7,9 +7,19 @@ const ProjectsSection = ({ projects }) => {
       title: "Tower Defense & Machine Learning",
       description: "Projet tutoré combinant développement de jeu 2D et intelligence artificielle. Implémentation d'algorithmes de ML pour optimiser les stratégies de défense et créer une IA adaptive.",
       link: "#",
-      media: "/api/placeholder/600/400",
-      tech: ["Python", "TensorFlow", "Pygame", "ML"],
+      media: "/tower-defense.gif",
+      tech: ["Java", "JavaFX", "ML"],
       duration: "216h",
+      status: "Terminé",
+      year: "2024"
+    },
+    {
+      title: "Projet IA",
+      description: "Un projet comparant notamment plusieurs algorithmes d'IA pour la résolution de problèmes.",
+      link: "https://github.com/tristan-roth/ProjetIA-RAIL2-ROTH-BOURDON",
+      media: "/projetIA.gif",
+      tech: ["Java"],
+      duration: "2 semaines",
       status: "Terminé",
       year: "2024"
     },
@@ -17,9 +27,9 @@ const ProjectsSection = ({ projects }) => {
       title: "Refonte Atoupro.com",
       description: "Refonte complète du site web avec une architecture moderne. Optimisation des performances, sécurisation et amélioration de l'expérience utilisateur.",
       link: "#",
-      media: "/api/placeholder/600/400",
-      tech: ["Java", "PHP", "JavaScript", "SQL"],
-      duration: "4 mois",
+      media: "/atoupro-demo.gif",
+      tech: ["PHP", "Smarty" ,"JavaScript", "SQL", "TailwindCSS"],
+      duration: "3 mois",
       status: "En cours",
       year: "2025"
     },
@@ -28,20 +38,10 @@ const ProjectsSection = ({ projects }) => {
       description: "Application de gestion d'affectations de tâches développée en 8h lors d'un hackathon. Interface intuitive et système de notification en temps réel.",
       link: "#",
       media: "/api/placeholder/600/400",
-      tech: ["React", "Node.js", "Socket.io"],
+      tech: ["Synfony","Java" ,"PHP", "MySQL", "JavaScript"],
       duration: "8h",
       status: "Terminé",
       year: "2024"
-    },
-    {
-      title: "Jeu 2D - Projet Personnel",
-      description: "Développement d'un jeu 2D complet avec moteur physique, système de score et multiples niveaux. Focus sur l'optimisation et la fluidité du gameplay.",
-      link: "#",
-      media: "/api/placeholder/600/400",
-      tech: ["C++", "SFML", "OpenGL"],
-      duration: "3 mois",
-      status: "Terminé",
-      year: "2023"
     }
   ];
 
@@ -174,17 +174,6 @@ const ProjectsSection = ({ projects }) => {
                           />
                         )}
                         
-                        {/* Overlay au hover */}
-                        <div className="absolute inset-0 bg-yellow-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-                          <div className="text-white text-center">
-                            <div className="w-16 h-16 border-2 border-white rounded-full flex items-center justify-center mb-2 mx-auto">
-                              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z"/>
-                              </svg>
-                            </div>
-                            <p className="text-sm font-semibold">Voir la démo</p>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -192,26 +181,6 @@ const ProjectsSection = ({ projects }) => {
               </FadeIn>
             );
           })}
-        </div>
-
-        {/* Call to action */}
-        <div className="text-center mt-20">
-          <div className="inline-block border-starwars-nopadding p-8 bg-gradient-to-r from-yellow-900/30 to-yellow-800/20">
-            <h3 className="text-2xl font-star text-yellow-400 mb-4">
-              Intéressé par mes projets ?
-            </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl">
-              N'hésitez pas à explorer le code source ou à me contacter pour discuter de ces réalisations et de futurs projets collaboratifs.
-            </p>
-            <div className="flex justify-center space-x-4">
-              <a href="#" className="px-6 py-3 bg-yellow-400/10 text-yellow-400 rounded-lg border border-yellow-400/30 hover:bg-yellow-400/20 transition-colors">
-                GitHub
-              </a>
-              <a href="#" className="px-6 py-3 bg-yellow-400/10 text-yellow-400 rounded-lg border border-yellow-400/30 hover:bg-yellow-400/20 transition-colors">
-                Me contacter
-              </a>
-            </div>
-          </div>
         </div>
       </div>
 
