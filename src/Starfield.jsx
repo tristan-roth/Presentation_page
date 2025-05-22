@@ -13,7 +13,7 @@ const Starfield = () => {
 
     const dpr = window.devicePixelRatio || 1;
     let width = window.innerWidth;
-    let height = window.innerHeight;
+    let height = document.body.scrollHeight;
 
     canvas.width = width * dpr;
     canvas.height = height * dpr;
