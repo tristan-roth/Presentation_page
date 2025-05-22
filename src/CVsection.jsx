@@ -2,7 +2,7 @@ import React from 'react';
 
 const CVSection = () => {
   return (
-    <div className="min-h-screen bg-black text-white p-6">
+    <div className="min-h-screen text-white p-6">
       <div className="max-w-4xl mx-auto">
         {/* En-tête */}
         <div className="text-center mb-12">
