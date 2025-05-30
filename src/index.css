@@ -29,23 +29,20 @@ html, body, #root {
 .border-starwars {
   position: relative;
   border: 1px solid #9f754c;
- 
   padding: 1.5rem;
   background-color: #111;
 
-  clip-path: polygon(
-    12px 0%, 100% 0%, 100% 12px,
-    100% calc(100% - 12px), calc(100% - 12px) 100%,
-    0% 100%, 0% calc(100% - 12px), 0% 12px
-  );
+  border-radius: 17px; /* arrondi sur tous les coins */
+
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .border-starwars:hover {
   border-color: #ffe91fc2;
   box-shadow: 0 0 8px #ffe81f;
-  
 }
+
+
 
 .border-starwars-nopadding {
   position: relative;
