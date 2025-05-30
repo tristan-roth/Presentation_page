@@ -6,18 +6,34 @@ const Starfield = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
+
+    //const ctx = canvas.getContext("2d");
+    // let width = (canvas.width = window.innerWidth);
+    // let height = (canvas.height = window.innerHeight);
+
+    const dpr = window.devicePixelRatio || 1;
+    let width = window.innerWidth;
+    let height = document.body.scrollHeight;
+
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+
     const ctx = canvas.getContext("2d");
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
+    ctx.scale(dpr, dpr);
+
 
     const numStars = 150;
+    const isMobile = window.innerWidth < 768;
+
     const mouse = { x: width / 2, y: height / 2, vx: 0, vy: 0 };
 
     // Init stars
     stars.current = Array.from({ length: numStars }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      r: Math.random() * 0.7 + 0.3,
+      r: isMobile ? Math.random() * 0.6 + 0.4 : Math.random() * 0.7 + 0.3,
       dx: Math.random() * 0.2 - 0.1,
       dy: Math.random() * 0.2 - 0.1,
     }));
@@ -38,7 +54,12 @@ const Starfield = () => {
         if (star.y > height) star.y = 0;
 
         // Draw
+        // ctx.beginPath();
+        const drawX = Math.round(star.x * 10) / 10;
+        const drawY = Math.round(star.y * 10) / 10;
         ctx.beginPath();
+        ctx.arc(drawX, drawY, star.r, 0, Math.PI * 2);
+
         ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
         ctx.fillStyle = "#fff";
         ctx.fill();
@@ -47,7 +68,6 @@ const Starfield = () => {
       // slow down velocity gradually
       mouse.vx *= 0.92;
       mouse.vy *= 0.92;
-
 
       requestAnimationFrame(animate);
     };
@@ -62,6 +82,7 @@ const Starfield = () => {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
+
     animate();
 
     window.addEventListener("resize", () => {

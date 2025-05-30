@@ -67,57 +67,6 @@ export default function App() {
         return staggeredFadeIn ([
           <ContactSection />
         ]);
-        // return (
-        //   <div className="space-y-6">
-        //     {staggeredFadeIn([
-        //       <h2 key="contact-title" className="text-2xl font-star text-yellow-600">
-        //         Me contacter
-        //       </h2>,
-
-        //       <form
-        //         key="contact-form"
-        //         action="https://formspree.io/f/mgvkpakn"
-        //         method="POST"
-        //         className="space-y-4"
-        //       >
-        //         <div>
-        //           <label className="block text-sm font-star">Nom //encadré en jaune le champs</label>
-        //           <input
-        //             type="text"
-        //             name="name"
-        //             required
-        //             className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
-        //           />
-        //         </div>
-        //         <div>
-        //           <label className="block text-sm font-star">Email</label>
-        //           <input
-        //             type="email"
-        //             name="email"
-        //             required
-        //             className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
-        //           />
-        //         </div>
-        //         <div>
-        //           <label className="block text-sm font-star">Message</label>
-        //           <textarea
-        //             name="message"
-        //             rows="5"
-        //             required
-        //             className="bg-neutral-900 mt-1 block w-full border rounded-md shadow-sm p-2 focus:ring focus:ring-yellow-600"
-        //           />
-        //         </div>
-        //         <button
-        //           type="submit"
-        //           className="bg-yellow-700 text-white px-4 py-2 rounded hover:bg-yellow-600"
-        //         >
-        //           Envoyer
-        //         </button>
-        //       </form>
-        //     ], 50, 150)}
-        //   </div>
-        // );
-
       default:
         return staggeredFadeIn ([
            <HomePage />

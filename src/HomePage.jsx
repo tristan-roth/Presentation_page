@@ -34,7 +34,7 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen text-white">
       <div className="max-w-6xl mx-auto p-6 space-y-8">
         
         {/* Section Hero */}
