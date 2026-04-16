@@ -1,21 +1,21 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  safelist: [
-    'border-starwars',
-  ],
   theme: {
     extend: {
       colors: {
-        jedi: '#2e9fff',
-        sith: '#ff2e2e',
-        starwarsGold: '#f7ba48',
-        darkspace: '#0a0a0a',
+        accent: '#ff3c28',
+        surface: {
+          DEFAULT: '#0a0a0a',
+          100: '#111111',
+          200: '#1a1a1a',
+          300: '#222222',
+        },
       },
       fontFamily: {
-        sans: ['"Open Sans"', 'ui-sans-serif', 'system-ui'],
-        star: ['Star', 'sans-serif'],
-        starwars: ['StarJedi', 'sans-serif'],
-      }
+        display: ['Syne', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+        mono: ['"Space Mono"', 'monospace'],
+      },
     },
   },
   plugins: [],
