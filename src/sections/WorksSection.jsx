@@ -34,18 +34,54 @@ const projects = [
     tech: ["PHP", "Smarty", "JS", "SQL", "Tailwind"],
     year: "2025",
     duration: "3 mois",
+    status: "Terminé",
+    size: "large",
+  },
+  {
+    title: "Site internet SARL_VBTP",
+    description: "Création du site internet de SARL_VBTP avec un travail axé sur la présence en ligne, la clarté des services et une structure pensée pour rassurer et convertir.",
+    link: "https://www.sarl-vbtp.com/",
+    media: "/sarl-vbtp-demo.gif",
+    tech: ["HTML", "CSS", "JavaScript", "UI"],
+    year: "2025",
+    duration: "Projet client",
+    status: "Terminé",
+    size: "small",
+  },
+  {
+    title: "Paddock_world",
+    description: "Site internet actuellement en cours de création, pensé comme une expérience très stylée pour regrouper tout ce qu'il faut savoir afin de découvrir le sport mécanique, notamment la F1.",
+    media: "/output.mp4",
+    tech: ["Web", "UI", "Motion", "F1"],
+    year: "2026",
+    duration: "En cours",
     status: "En cours",
     size: "large",
+    mediaClassName: "object-cover",
+  },
+  {
+    title: "Outil web INRS",
+    description: "Conception et développement d'un outil destiné à être intégré au site officiel de l'INRS, avec une attention particulière portée à l'intégration, à l'utilité métier et à la qualité de l'expérience utilisateur.",
+    media: "/inrs-sigle-visual.svg",
+    tech: ["Web", "JavaScript", "UI", "Integration"],
+    year: "2026",
+    duration: "En cours",
+    status: "En cours",
+    size: "large",
+    mediaClassName: "object-contain p-8 md:p-10 bg-[#0b1020]",
+    imageClassName: "h-full",
   },
   {
     title: "Crazy Charly Days",
     description: "Application de gestion d'affectations développée en 8h lors d'un hackathon.",
-    media: "/portfolio.png",
+    media: "/iut-charlemagne-logo.png",
     tech: ["Symfony", "PHP", "MySQL", "JS"],
     year: "2024",
     duration: "8h",
     status: "Terminé",
     size: "small",
+    mediaClassName: "object-contain p-8 bg-white",
+    imageClassName: "h-full",
   },
 ];
 
@@ -91,7 +127,7 @@ export default function WorksSection() {
       <div className="max-w-7xl mx-auto">
         {/* Section label */}
         <div className="flex items-center gap-4 mb-8">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-accent">02</span>
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-accent">03</span>
           <hr className="hr-accent flex-1 max-w-[60px]" />
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-neutral-500">Selected Works</span>
         </div>
@@ -111,11 +147,22 @@ export default function WorksSection() {
             >
               {/* Image */}
               <div className="relative overflow-hidden h-56 md:h-72">
-                <img
-                  src={project.media}
-                  alt={project.title}
-                  className="work-img card-media w-full h-[120%] object-cover"
-                />
+                {project.media.endsWith('.mp4') ? (
+                  <video
+                    src={project.media}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className={`work-img card-media w-full ${project.imageClassName || 'h-[120%]'} ${project.mediaClassName || 'object-cover'}`}
+                  />
+                ) : (
+                  <img
+                    src={project.media}
+                    alt={project.title}
+                    className={`work-img card-media w-full ${project.imageClassName || 'h-[120%]'} ${project.mediaClassName || 'object-cover'}`}
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-surface-100 via-transparent to-transparent" />
 
                 {/* Status badge */}

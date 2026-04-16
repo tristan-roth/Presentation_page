@@ -190,3 +190,72 @@ body {
   display: inline-block;
   transform: translateY(100%);
 }
+
+@keyframes commitmentPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
+@keyframes commitmentGlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate3d(-10px, 12px, 0) scale(1.08);
+    opacity: 0.9;
+  }
+}
+
+.commitment-line-progress {
+  background: linear-gradient(180deg, #ff3c28 0%, rgba(255, 60, 40, 0.65) 72%, transparent 100%);
+  box-shadow: 0 0 20px rgba(255, 60, 40, 0.25);
+}
+
+.commitment-panel {
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.commitment-panel:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 60, 40, 0.4);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+}
+
+.commitment-panel:hover .commitment-index {
+  color: rgba(255, 60, 40, 0.18);
+  transform: translateY(-4px);
+}
+
+.commitment-index {
+  transition: color 0.35s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.commitment-node {
+  animation: commitmentPulse 2.8s ease-in-out infinite;
+}
+
+.commitment-aurora {
+  animation: commitmentGlow 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .commitment-node,
+  .commitment-aurora,
+  .marquee-track {
+    animation: none;
+  }
+
+  .commitment-panel,
+  .bento-card,
+  .nav-link::after {
+    transition: none;
+  }
+}

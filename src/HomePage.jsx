@@ -61,13 +61,13 @@ const HomePage = () => {
                 </div>
                 
                 <p className="text-gray-300 leading-relaxed">
-                  Étudiant en 3e année de <span className="text-yellow-400 font-semibold">BUT Informatique</span> à l'IUT Nancy Charlemagne, 
-                  parcours <span className="text-yellow-400 font-semibold">Réalisation d'Applications – Ingénierie Logicielle</span>.
+                  Étudiant en 1ère année de <span className="text-yellow-400 font-semibold">Master of science</span> à Epitech Nancy, 
+                  spécialité <span className="text-yellow-400 font-semibold">IA & Big Data</span>.
                 </p>
                 
                 <p className="text-gray-300 leading-relaxed">
-                  Passionné par le développement web et logiciel, je travaille actuellement sur la refonte du site 
-                  <span className="text-yellow-400 font-semibold"> Atoupro.com</span>, et j'ai mené plusieurs projets en IA, 
+                  Passionné par le développement logiciel et web, je travaille actuellement sur la réalisation d'un outil destiné à être intégré au site internet de 
+                  <span className="text-yellow-400 font-semibold"> l'Institut National de Recherche et de Sécurité (INRS)</span>, et j'ai mené plusieurs projets en IA, 
                   architecture logicielle, et en développement web.
                 </p>
               </div>
@@ -80,7 +80,7 @@ const HomePage = () => {
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span className="text-gray-400">Formation :</span>
-                      <span className="text-white">BUT Informatique</span>
+                      <span className="text-white">Master of Science - IA & Big Data</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Localisation :</span>

@@ -1,0 +1,40 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0B1020"/>
+  <rect x="64" y="64" width="1472" height="772" rx="36" fill="url(#bg)"/>
+  <rect x="64.5" y="64.5" width="1471" height="771" rx="35.5" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <path d="M117 706C253 596 382 542 520 544C716 546 815 690 1011 692C1140 694 1260 646 1458 466" stroke="url(#line)" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="117" cy="706" r="14" fill="#FF3C28"/>
+  <circle cx="520" cy="544" r="14" fill="#FF3C28"/>
+  <circle cx="1011" cy="692" r="14" fill="#FF3C28"/>
+  <circle cx="1458" cy="466" r="14" fill="#FF3C28"/>
+  <g filter="url(#glow)">
+    <circle cx="1220" cy="240" r="170" fill="#3B82F6" fill-opacity="0.14"/>
+  </g>
+  <g filter="url(#glowSoft)">
+    <circle cx="290" cy="212" r="120" fill="#FF3C28" fill-opacity="0.13"/>
+  </g>
+  <text x="140" y="264" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="34" letter-spacing="8">PROJET EN COURS</text>
+  <text x="140" y="454" fill="white" font-family="Inter, Arial, sans-serif" font-size="196" font-weight="800" letter-spacing="10">INRS</text>
+  <text x="140" y="546" fill="#E2E8F0" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="500">Institut National de Recherche et de Securite</text>
+  <text x="140" y="636" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="34">Outil web concu pour une integration au site officiel</text>
+  <defs>
+    <linearGradient id="bg" x1="64" y1="64" x2="1536" y2="836" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="line" x1="117" y1="706" x2="1458" y2="466" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF3C28"/>
+      <stop offset="1" stop-color="#60A5FA"/>
+    </linearGradient>
+    <filter id="glow" x="930" y="-50" width="580" height="580" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="60" result="effect1_foregroundBlur_1_1"/>
+    </filter>
+    <filter id="glowSoft" x="50" y="-28" width="480" height="480" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="60" result="effect1_foregroundBlur_1_1"/>
+    </filter>
+  </defs>
+</svg>

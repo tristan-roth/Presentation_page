@@ -54,7 +54,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto">
         {/* Section label */}
         <div className="flex items-center gap-4 mb-8 contact-reveal">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-accent">03</span>
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-accent">04</span>
           <hr className="hr-accent flex-1 max-w-[60px]" />
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-neutral-500">Contact</span>
         </div>

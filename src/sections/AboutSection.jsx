@@ -8,7 +8,7 @@ export default function AboutSection() {
   const sectionRef = useRef(null);
   const wordsRef = useRef([]);
 
-  const paragraph = "Étudiant en 3e année de BUT Informatique à l'IUT Nancy Charlemagne, spécialisé en Réalisation d'Applications et Ingénierie Logicielle. Passionné par le développement web et logiciel, je transforme des idées complexes en solutions élégantes. Mon approche mêle rigueur technique et sensibilité créative.";
+  const paragraph = "Étudiant en 1ère année de Master of science à Epitech Nancy, spécialité IA & Big Data. Passionné par le développement logiciel et web, je travaille actuellement sur la réalisation d'un outil destiné à être intégré au site internet de l'Institut National de Recherche et de Sécurité (INRS).";
 
   const words = paragraph.split(' ');
 
