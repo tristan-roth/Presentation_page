@@ -30,7 +30,7 @@ export default function Footer() {
           </a>
         </div>
         <span className="font-mono text-[10px] uppercase tracking-widest text-neutral-700">
-          VIE2DEBAUCHE
+          TODO
         </span>
       </div>
     </footer>

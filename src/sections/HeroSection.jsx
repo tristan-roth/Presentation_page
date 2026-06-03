@@ -83,7 +83,7 @@ export default function HeroSection() {
           </div>
           <div className="overflow-hidden">
             <p ref={line3Ref} className="font-display font-medium text-[5vw] md:text-[2.5vw] lg:text-[2vw] leading-tight text-neutral-500 mt-4 max-w-2xl">
-              Je conçois des expériences numériques qui allient code, design et performance.
+              J'utilise la technologie d'aujourd'hui pour livrer les meilleures expériences numériques de demain.
             </p>
           </div>
         </div>
@@ -99,7 +99,7 @@ export default function HeroSection() {
       <div className="absolute right-6 md:right-12 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-4">
         <div className="w-[1px] h-20 bg-white/10" />
         <span className="font-mono text-[10px] tracking-widest text-neutral-600" style={{ writingMode: 'vertical-rl' }}>
-          VIE2DEBAUCHE
+          TODO
         </span>
         <div className="w-[1px] h-20 bg-white/10" />
       </div>

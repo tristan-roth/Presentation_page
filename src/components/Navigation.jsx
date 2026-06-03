@@ -33,7 +33,7 @@ export default function Navigation() {
           className="font-display font-extrabold text-xl tracking-tight text-white hover:text-accent transition-colors"
           data-hover
         >
-          V2D<span className="text-accent">.</span>
+          TR<span className="text-accent">.</span>
         </button>
 
         {/* Desktop */}

@@ -83,6 +83,19 @@ const projects = [
     mediaClassName: "object-contain p-8 bg-white",
     imageClassName: "h-full",
   },
+  {
+    title: "AuditPro",
+    description: "Extension pour VS Code destinée à l'audit de code et à l'amélioration de la qualité du code. Génération d'un rapport détaillé avec des recommandations d'amélioration et génération d'un prompt à copier-coller pour corriger les problèmes détectés.",
+    link: "https://marketplace.visualstudio.com/items?itemName=Dealer2chien.auditpro",
+    media: "/auditpro.png",
+    tech: ["TypeScript", "VS Code API"],
+    year: "2026",
+    duration: "4h",
+    status: "Terminé",
+    size: "small",
+    mediaClassName: "object-contain p-8 bg-white",
+    imageClassName: "h-full",
+  }
 ];
 
 export default function WorksSection() {
