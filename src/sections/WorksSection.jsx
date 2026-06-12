@@ -95,7 +95,7 @@ const projects = [
     size: "small",
     mediaClassName: "object-contain p-8 bg-white",
     imageClassName: "h-full",
-  }
+  },
   {
     title: "Size in repo",
     description: "Userscript greasyfork utilisable avec Tampermonkey permettant de visualiser la taille des dossier et des fichiers dans un dépôt Git.",
